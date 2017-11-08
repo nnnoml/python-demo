@@ -22,6 +22,7 @@ class CharisPipeline(object):
         # self.cursor.execute('truncate table novel')
         # self.db.commit()
     def process_item(self, item, spider):
+        # if spider.name == 'news':
         curTime = str(datetime.datetime.now())
         title = str(item['title'][0])
         author = str(item['author'][0])

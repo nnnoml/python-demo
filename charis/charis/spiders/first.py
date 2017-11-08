@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from charis.items import CharisItem
+from charis.items_first import FirstItem
 
 class FirstSpider(scrapy.Spider):
     name = 'first'
@@ -15,7 +15,7 @@ class FirstSpider(scrapy.Spider):
 
     def parse_dir_contents(self, response):
         for quote in response.xpath('//ul/li'):
-            item = CharisItem()
+            item = FirstItem()
             item['title'] = quote.xpath('a/text()').extract(),
             item['link'] =  quote.xpath('a/@href').extract()
             yield item

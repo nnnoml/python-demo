@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import re
-from charis.ugoitems import UgoItem
+from charis.items_second import SecondItem
 
 class SecondSpider(scrapy.Spider):
-    name = 'ugo'
+    name = 'second'
     start_urls = ['http://www.23us.cc/class/1_1.html'] #/class/7_1.html
     base_url = 'http://www.23us.cc'
 
@@ -20,7 +20,7 @@ class SecondSpider(scrapy.Spider):
 
     def parse_dir_contents(self, response):
         for quote in response.xpath('//div[@id="container"]'):
-            item = UgoItem()
+            item = SecondItem()
             aa = ''
             item['url'] = response.meta['url']
             for info in quote.xpath('div[@class="bookinfo"]'):

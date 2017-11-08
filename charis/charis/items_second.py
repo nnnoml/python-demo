@@ -8,7 +8,7 @@
 import scrapy
 
 
-class UgoItem(scrapy.Item):
+class SecondItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     # pass
